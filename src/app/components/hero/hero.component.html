@@ -1,0 +1,61 @@
+<section class="hero section-spacing" id="hero">
+  <div class="hero-grid">
+    <div class="hero-content" appReveal [revealDelay]="120">
+      <p class="eyebrow">Software Engineer Portfolio</p>
+      <h1>{{ profile.name }}</h1>
+      <h2>{{ profile.role }}</h2>
+      <p class="tagline">{{ profile.tagline }}</p>
+
+      <div class="cta-group">
+        <a class="button-primary" [href]="'mailto:' + profile.email">
+          <span class="material-symbols-rounded">send</span>
+          Hire Me
+        </a>
+        <a class="button-secondary" [href]="profile.resumePath" download>
+          <span class="material-symbols-rounded">download</span>
+          Download Resume
+        </a>
+      </div>
+
+      <ul class="social-list">
+        @for (social of profile.social; track social.label) {
+          <li>
+            <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-rounded">{{ social.icon }}</span>
+              {{ social.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="hero-visual surface-card" appReveal [revealDelay]="220">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <div class="location-stack">
+        <div class="profile-chip">
+          <span class="material-symbols-rounded">home_pin</span>
+          Home: {{ profile.location }}
+        </div>
+
+        @if (profile.currentLocation) {
+          <div class="profile-chip">
+            <span class="material-symbols-rounded">apartment</span>
+            Current: {{ profile.currentLocation }}
+          </div>
+        }
+      </div>
+
+      <div class="stat-grid">
+        @for (stat of profile.heroStats; track stat.label) {
+          <article class="stat-card">
+            <span class="material-symbols-rounded">{{ stat.icon }}</span>
+            <strong>{{ stat.value }}</strong>
+            <p>{{ stat.label }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

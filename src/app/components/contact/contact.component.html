@@ -1,0 +1,67 @@
+<section class="contact section-spacing" id="contact">
+  <div class="contact-grid">
+    <article class="contact-info surface-card" appReveal>
+      <p class="section-tag">Contact</p>
+      <h2>Let's build something meaningful together.</h2>
+      <p>{{ contactPitch }}</p>
+
+      <ul>
+        <li>
+          <span class="material-symbols-rounded">mail</span>
+          <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        </li>
+        @if (profile.phone) {
+          <li>
+            <span class="material-symbols-rounded">call</span>
+            <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+          </li>
+        }
+        <li>
+          <span class="material-symbols-rounded">home_pin</span>
+          <span>Home: {{ profile.location }}</span>
+        </li>
+        @if (profile.currentLocation) {
+          <li>
+            <span class="material-symbols-rounded">apartment</span>
+            <span>Current: {{ profile.currentLocation }}</span>
+          </li>
+        }
+      </ul>
+
+      <div class="social-links">
+        @for (social of profile.social; track social.label) {
+          <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-rounded">{{ social.icon }}</span>
+            {{ social.label }}
+          </a>
+        }
+      </div>
+    </article>
+
+    <form class="contact-form surface-card" [formGroup]="form" (ngSubmit)="onSubmit()" appReveal [revealDelay]="130">
+      <label>
+        Name
+        <input type="text" formControlName="name" placeholder="Your name" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" formControlName="email" placeholder="you@example.com" />
+      </label>
+
+      <label>
+        Message
+        <textarea rows="5" formControlName="message" placeholder="Tell me about your project or opportunity"></textarea>
+      </label>
+
+      <button type="submit">
+        <span class="material-symbols-rounded">north_east</span>
+        Send Message
+      </button>
+
+      @if (submitMessage) {
+        <p class="submit-feedback">{{ submitMessage }}</p>
+      }
+    </form>
+  </div>
+</section>

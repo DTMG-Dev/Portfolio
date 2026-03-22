@@ -1,0 +1,45 @@
+<section class="projects section-spacing" id="projects">
+  <div class="projects-shell">
+    <header appReveal>
+      <p class="section-tag">Projects</p>
+      <h2>Selected work from my development journey</h2>
+    </header>
+
+    <div class="project-grid">
+      @for (project of projects; track project.title; let i = $index) {
+        <article class="project-card surface-card" appReveal [revealDelay]="i * 90 + 80">
+          <div class="card-head">
+            <h3>{{ project.title }}</h3>
+            <span>{{ project.period }}</span>
+          </div>
+
+          <p class="description">{{ project.description }}</p>
+
+          <ul class="highlight-list">
+            @for (point of project.highlights; track point) {
+              <li>
+                <span class="material-symbols-rounded">subdirectory_arrow_right</span>
+                {{ point }}
+              </li>
+            }
+          </ul>
+
+          <ul class="stack-list">
+            @for (tech of project.stack; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+
+          <div class="links">
+            @for (link of project.links; track link.url) {
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-rounded">{{ link.icon }}</span>
+                {{ link.label }}
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

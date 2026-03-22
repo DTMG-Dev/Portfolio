@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 1rem;
+  z-index: 40;
+}
+
+.navbar-wrapper {
+  padding: 1rem 1rem 0;
+}
+
+.navbar {
+  margin-inline: auto;
+  width: min(72rem, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--surface-stroke);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  border: 0;
+  padding: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.brand-mark {
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--on-accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: var(--soft-shadow);
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu button {
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 220ms ease, background-color 220ms ease, transform 220ms ease;
+}
+
+.menu button:hover {
+  color: var(--text);
+  background: var(--surface-raised);
+  transform: translateY(-1px);
+}
+
+.theme-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.theme-button .material-symbols-rounded {
+  font-size: 1.05rem;
+}
+
+.mobile-toggle {
+  display: none;
+  border: 0;
+  border-radius: 0.75rem;
+  background: var(--surface-raised);
+  color: var(--text);
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  cursor: pointer;
+}
+
+.mobile-toggle .material-symbols-rounded {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 52rem) {
+  .mobile-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .menu {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 1rem;
+    left: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.55rem;
+    border: 1px solid var(--surface-stroke);
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: var(--soft-shadow);
+    opacity: 0;
+    transform: scale(0.98) translateY(-0.35rem);
+    pointer-events: none;
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .menu.menu-open {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
+
+  .menu button {
+    width: 100%;
+    text-align: left;
+  }
+}

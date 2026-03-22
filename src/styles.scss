@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0');
+
+:root {
+  color-scheme: light;
+  --font-body: 'Manrope', sans-serif;
+  --font-heading: 'Sora', sans-serif;
+
+  --bg: #f6f7fb;
+  --bg-elevated: #ffffff;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-raised: #ffffff;
+  --surface-muted: #e6ebf3;
+  --surface-stroke: #d6deea;
+
+  --text: #101725;
+  --text-muted: #314157;
+  --text-soft: #52617a;
+
+  --accent: #007d7a;
+  --accent-strong: #005e67;
+  --highlight: #f67f41;
+  --on-accent: #f8fcff;
+
+  --soft-shadow: 0 12px 30px rgba(16, 23, 37, 0.12);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #070d17;
+  --bg-elevated: #101824;
+  --surface: rgba(16, 24, 36, 0.78);
+  --surface-raised: #141f30;
+  --surface-muted: #1d2a3f;
+  --surface-stroke: #273a58;
+
+  --text: #e8edf6;
+  --text-muted: #c4d0e1;
+  --text-soft: #a7b6cc;
+
+  --accent: #24c4be;
+  --accent-strong: #6be2da;
+  --highlight: #ffc16f;
+  --on-accent: #002523;
+
+  --soft-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% -15%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 40%),
+    radial-gradient(circle at 100% 110%, color-mix(in srgb, var(--highlight) 18%, transparent), transparent 42%),
+    var(--bg);
+  min-height: 100vh;
+  line-height: 1.55;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.surface-card {
+  background: var(--surface);
+  box-shadow: var(--soft-shadow);
+}
+
+.section-spacing {
+  padding-top: clamp(2.2rem, 7vw, 4.5rem);
+}
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+
+.about {
+  padding-inline: 1rem;
+}
+
+.content {
+  margin-inline: auto;
+  width: min(72rem, 100%);
+  border-radius: 1.4rem;
+  border: 1px solid var(--surface-stroke);
+  padding: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  gap: 1rem;
+}
+
+header h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+}
+
+.section-tag {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+.summary-grid p {
+  margin: 0;
+  border: 1px solid var(--surface-stroke);
+  background: var(--surface-raised);
+  border-radius: 1rem;
+  padding: 0.9rem;
+  color: var(--text-soft);
+}
+
+h3 {
+  margin: 0.3rem 0 0;
+  font-size: 1.05rem;
+  font-family: var(--font-heading);
+}
+
+.chip-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.65rem;
+}
+
+.chip-grid li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  border: 1px solid var(--surface-stroke);
+  background: var(--surface);
+  border-radius: 0.85rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.chip-grid .material-symbols-rounded {
+  font-size: 1rem;
+  color: var(--accent-strong);
+}

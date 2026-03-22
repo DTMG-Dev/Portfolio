@@ -1,0 +1,32 @@
+<div class="app-shell">
+  <div class="bg-shape bg-shape-a"></div>
+  <div class="bg-shape bg-shape-b"></div>
+
+  <app-navbar
+    [items]="navItems"
+    [name]="data.profile.shortName"
+    [isDarkMode]="isDarkMode()"
+    (sectionSelected)="onSelectSection($event)"
+    (themeToggle)="onToggleTheme()"
+  />
+
+  <main>
+    @if (!isLoaded()) {
+      <app-loading-skeleton />
+    } @else {
+      <app-hero [profile]="data.profile" />
+      <app-about [profile]="data.profile" [aboutBlurb]="data.aboutBlurb" />
+      <app-skills [skills]="data.skills" />
+      <app-projects [projects]="data.projects" />
+      <app-timeline [timeline]="data.timeline" />
+      <app-contact [profile]="data.profile" [contactPitch]="data.contactPitch" />
+    }
+  </main>
+
+  <footer class="footer section-spacing">
+    <p>
+      Crafted by {{ data.profile.shortName }} with Angular and SCSS.
+      <a [href]="data.profile.resumePath" download>Download resume</a>
+    </p>
+  </footer>
+</div>

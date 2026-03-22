@@ -1,0 +1,31 @@
+<section class="skills section-spacing" id="skills">
+  <div class="skills-shell">
+    <header appReveal>
+      <p class="section-tag">Skills</p>
+      <h2>Technology stack I work with daily</h2>
+    </header>
+
+    <div class="skills-grid">
+      @for (group of skills; track group.category; let i = $index) {
+        <article class="skill-category surface-card" appReveal [revealDelay]="i * 80 + 80">
+          <h3>{{ group.category }}</h3>
+
+          <ul>
+            @for (skill of group.items; track skill.name) {
+              <li>
+                <div class="meta">
+                  <span class="material-symbols-rounded">{{ skill.icon }}</span>
+                  <span>{{ skill.name }}</span>
+                  <strong>{{ skill.level }}%</strong>
+                </div>
+                <div class="progress-track" role="progressbar" [attr.aria-valuenow]="skill.level" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill" [style.width.%]="skill.level"></div>
+                </div>
+              </li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

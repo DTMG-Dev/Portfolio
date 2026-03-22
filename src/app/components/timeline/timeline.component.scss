@@ -1,0 +1,127 @@
+:host {
+  display: block;
+}
+
+.timeline {
+  padding-inline: 1rem;
+}
+
+.timeline-shell {
+  margin-inline: auto;
+  width: min(72rem, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+.section-tag {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+header h2 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0.95rem;
+  position: relative;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 1.25rem;
+  inline-size: 2px;
+  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 20%, transparent));
+  opacity: 0.55;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  border: 1px solid var(--surface-stroke);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  margin-inline-start: 0.35rem;
+}
+
+.marker {
+  inline-size: 1.8rem;
+  block-size: 1.8rem;
+  border-radius: 50%;
+  border: 1px solid var(--surface-stroke);
+  background: var(--surface-raised);
+  display: grid;
+  place-items: center;
+  color: var(--accent-strong);
+  z-index: 1;
+}
+
+.marker .material-symbols-rounded {
+  font-size: 1rem;
+}
+
+.content {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.head h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+}
+
+.head span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px solid var(--surface-stroke);
+  background: var(--surface-raised);
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+}
+
+.org {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  color: var(--text-soft);
+  display: grid;
+  gap: 0.35rem;
+}
+
+li {
+  line-height: 1.45;
+}
+
+@media (max-width: 42rem) {
+  .timeline-list::before {
+    left: 0.85rem;
+  }
+
+  .timeline-item {
+    margin-inline-start: 0;
+  }
+}

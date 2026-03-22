@@ -1,0 +1,32 @@
+<section class="timeline section-spacing" id="timeline">
+  <div class="timeline-shell">
+    <header appReveal>
+      <p class="section-tag">Experience & Education</p>
+      <h2>Professional timeline and achievements</h2>
+    </header>
+
+    <div class="timeline-list" appReveal [revealDelay]="100">
+      @for (entry of timeline; track entry.title + entry.period) {
+        <article class="timeline-item surface-card">
+          <div class="marker">
+            <span class="material-symbols-rounded">{{ iconFor(entry.type) }}</span>
+          </div>
+
+          <div class="content">
+            <div class="head">
+              <h3>{{ entry.title }}</h3>
+              <span>{{ entry.period }}</span>
+            </div>
+            <p class="org">{{ entry.organization }} - {{ entry.location }}</p>
+
+            <ul>
+              @for (item of entry.description; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

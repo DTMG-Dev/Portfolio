@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.app-shell {
+  position: relative;
+  overflow: clip;
+}
+
+main {
+  display: grid;
+}
+
+.bg-shape {
+  position: fixed;
+  z-index: -1;
+  inline-size: clamp(16rem, 22vw, 28rem);
+  block-size: clamp(16rem, 22vw, 28rem);
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.bg-shape-a {
+  inset: -8rem auto auto -8rem;
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
+}
+
+.bg-shape-b {
+  inset: auto -9rem -8rem auto;
+  background: color-mix(in srgb, var(--highlight) 28%, transparent);
+}
+
+.footer {
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0 auto;
+  width: min(72rem, 100%);
+  color: var(--text-soft);
+  font-size: 0.86rem;
+}
+
+.footer a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+<section class="about section-spacing" id="about">
+  <div class="content surface-card" appReveal [revealDelay]="80">
+    <header>
+      <p class="section-tag">About Me</p>
+      <h2>Engineering products that scale and stay maintainable.</h2>
+    </header>
+
+    <p class="lead">{{ aboutBlurb }}</p>
+
+    <div class="summary-grid">
+      @for (line of profile.summary; track $index) {
+        <p>{{ line }}</p>
+      }
+    </div>
+
+    <h3>Core Strengths</h3>
+    <ul class="chip-grid">
+      @for (strength of profile.strengths; track strength) {
+        <li>
+          <span class="material-symbols-rounded">done</span>
+          {{ strength }}
+        </li>
+      }
+    </ul>
+  </div>
+</section>

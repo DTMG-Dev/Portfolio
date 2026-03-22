@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.skeleton {
+  padding-inline: 1rem;
+}
+
+.shell {
+  margin-inline: auto;
+  width: min(72rem, 100%);
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.skeleton-card {
+  border-radius: 1rem;
+  border: 1px solid var(--surface-stroke);
+  padding: 1rem;
+  background: var(--surface);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.line {
+  block-size: 0.72rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--surface-muted), var(--surface-raised), var(--surface-muted));
+  background-size: 200% 100%;
+  animation: pulse 1.4s infinite linear;
+}
+
+.line-lg {
+  inline-size: 72%;
+}
+
+.line-md {
+  inline-size: 100%;
+}
+
+.line-sm {
+  inline-size: 58%;
+}
+
+@keyframes pulse {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

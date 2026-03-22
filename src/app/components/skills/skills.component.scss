@@ -1,0 +1,95 @@
+:host {
+  display: block;
+}
+
+.skills {
+  padding-inline: 1rem;
+}
+
+.skills-shell {
+  margin-inline: auto;
+  width: min(72rem, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+header h2 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+}
+
+.section-tag {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 0.95rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.skill-category {
+  border: 1px solid var(--surface-stroke);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.skill-category h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-family: var(--font-heading);
+}
+
+.skill-category ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.72rem;
+}
+
+.skill-category li {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.meta .material-symbols-rounded {
+  color: var(--accent-strong);
+  font-size: 1.02rem;
+}
+
+.meta strong {
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.progress-track {
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface-muted));
+  border-radius: 999px;
+  block-size: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  block-size: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+}
