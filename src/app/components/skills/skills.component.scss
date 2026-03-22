@@ -70,7 +70,20 @@ header h2 {
   font-size: 0.86rem;
 }
 
-.meta .material-symbols-rounded {
+.icon-shell {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: grid;
+  place-items: center;
+}
+
+.icon-shell img {
+  inline-size: 1.05rem;
+  block-size: 1.05rem;
+  object-fit: contain;
+}
+
+.icon-shell .material-symbols-rounded {
   color: var(--accent-strong);
   font-size: 1.02rem;
 }

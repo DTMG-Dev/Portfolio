@@ -23,6 +23,7 @@ export interface PersonProfile {
   location: string;
   currentLocation?: string;
   email: string;
+  secondaryEmail?: string;
   phone?: string;
   summary: string[];
   strengths: string[];
@@ -57,14 +58,32 @@ export interface ProjectItem {
   links: ProjectLink[];
 }
 
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+  period: string;
+  issuedDate?: string;
+  credentialUrl: string;
+  credentialId?: string;
+  description: string;
+  skills: string[];
+}
+
+export interface PublicationItem {
+  title: string;
+  context: string;
+  period: string;
+  abstract: string;
+  publicationUrl?: string;
+}
+
 export interface TimelineEntry {
   title: string;
   organization: string;
   location: string;
-  currentLocation?: string;
   period: string;
   description: string[];
-  type: 'experience' | 'education' | 'certification';
+  type: 'experience' | 'education';
 }
 
 export interface PortfolioData {
@@ -73,5 +92,7 @@ export interface PortfolioData {
   skills: SkillCategory[];
   projects: ProjectItem[];
   timeline: TimelineEntry[];
+  certifications: CertificationItem[];
+  publications: PublicationItem[];
   contactPitch: string;
 }

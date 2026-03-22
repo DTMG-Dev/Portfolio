@@ -10,6 +10,12 @@
           <span class="material-symbols-rounded">mail</span>
           <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
         </li>
+        @if (profile.secondaryEmail) {
+          <li>
+            <span class="material-symbols-rounded">alternate_email</span>
+            <a [href]="'mailto:' + profile.secondaryEmail">{{ profile.secondaryEmail }}</a>
+          </li>
+        }
         @if (profile.phone) {
           <li>
             <span class="material-symbols-rounded">call</span>

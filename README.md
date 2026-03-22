@@ -53,7 +53,21 @@ npm run build
 
 Build output:
 
-- `dist/my-portfolio`
+- `dist/my-portfolio/browser`
+
+## Deploy To Vercel
+
+This repo is pre-configured for Vercel using `vercel.json`.
+
+1. Push this project to GitHub.
+2. In Vercel, click **Add New Project** and import the GitHub repo.
+3. Keep defaults (Vercel will use config from `vercel.json`):
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist/my-portfolio/browser`
+4. Click **Deploy**.
+
+For every next push to your main branch, Vercel will auto-deploy.
 
 ## Project Structure
 

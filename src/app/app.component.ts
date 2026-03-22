@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, computed, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AboutComponent } from './components/about/about.component';
+import { CertificationsComponent } from './components/certifications/certifications.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { LoadingSkeletonComponent } from './components/loading-skeleton/loading-skeleton.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { PublicationsComponent } from './components/publications/publications.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { portfolioData } from './data/portfolio.data';
@@ -24,6 +26,8 @@ import { ThemeService } from './services/theme.service';
     SkillsComponent,
     ProjectsComponent,
     TimelineComponent,
+    CertificationsComponent,
+    PublicationsComponent,
     ContactComponent,
     LoadingSkeletonComponent
   ],
@@ -41,6 +45,8 @@ export class AppComponent implements OnInit, OnDestroy {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'timeline', label: 'Timeline' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'publications', label: 'Publications' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -69,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.metaService.updateTag({
       property: 'og:description',
       content:
-        'Explore projects, experience, and technical strengths of a full-stack engineer focused on scalable Angular and .NET solutions.'
+        'Explore projects, experience, certifications, publications, and technical strengths of a full-stack engineer focused on scalable Angular and .NET solutions.'
     });
 
     this.loaderTimer = setTimeout(() => this.isLoaded.set(true), 1000);

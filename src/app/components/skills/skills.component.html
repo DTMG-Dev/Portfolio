@@ -14,7 +14,13 @@
             @for (skill of group.items; track skill.name) {
               <li>
                 <div class="meta">
-                  <span class="material-symbols-rounded">{{ skill.icon }}</span>
+                  <span class="icon-shell">
+                    @if (iconSvg(skill.name); as svg) {
+                      <img [src]="svg" [alt]="skill.name + ' icon'" loading="lazy" (error)="onSkillIconError(skill.name)" />
+                    } @else {
+                      <span class="material-symbols-rounded">{{ iconSymbol(skill.name, skill.icon) }}</span>
+                    }
+                  </span>
                   <span>{{ skill.name }}</span>
                   <strong>{{ skill.level }}%</strong>
                 </div>

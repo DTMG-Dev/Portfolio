@@ -26,7 +26,16 @@
 
           <ul class="stack-list">
             @for (tech of project.stack; track tech) {
-              <li>{{ tech }}</li>
+              <li>
+                <span class="icon-shell">
+                  @if (stackIconSvg(tech); as svg) {
+                    <img [src]="svg" [alt]="tech + ' icon'" loading="lazy" (error)="onStackIconError(tech)" />
+                  } @else {
+                    <span class="material-symbols-rounded">{{ stackIconSymbol(tech) }}</span>
+                  }
+                </span>
+                <span>{{ tech }}</span>
+              </li>
             }
           </ul>
 

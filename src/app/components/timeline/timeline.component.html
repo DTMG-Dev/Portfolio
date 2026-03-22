@@ -6,7 +6,7 @@
     </header>
 
     <div class="timeline-list" appReveal [revealDelay]="100">
-      @for (entry of timeline; track entry.title + entry.period) {
+      @for (entry of sortedTimeline; track entry.title + entry.period) {
         <article class="timeline-item surface-card">
           <div class="marker">
             <span class="material-symbols-rounded">{{ iconFor(entry.type) }}</span>
